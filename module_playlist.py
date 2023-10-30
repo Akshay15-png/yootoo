@@ -8,12 +8,14 @@ def download_playlist(res,destination_folder):
     try:
         playlist = Playlist(playlist_url)
         
+        i=1
         for video_url in playlist.video_urls:
             yt = YouTube(video_url)
             stream = yt.streams.filter(res=res, file_extension='mp4').first()
             stream.download(output_path=destination_folder)
             print("\n-------------------------------------------------------------------------")
-            print(f"Downloaded: {yt.title}")
+            print(f"{i}. Downloaded: {yt.title}")
+            i+=1
         
         print("Location: ",destination_folder)
         print("Playlist download completed 😀.")
