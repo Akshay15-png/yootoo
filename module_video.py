@@ -14,7 +14,7 @@ def download_video(res,destination_folder):
             print("\n")
             stream.download(output_path=destination_folder)
             print(f"Downloaded: {stream}")
-            print(f"Location: destination_folder")
+            print(f"Location: {destination_folder}")
         else:
             print(f"No matching stream available for the specified resolution and format.")
 
